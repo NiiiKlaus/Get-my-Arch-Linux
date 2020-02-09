@@ -2,7 +2,7 @@
 
 # 写在前面
 
-- 参考的视频：
+- 安装参考的视频：
 
   <https://www.bilibili.com/video/av81146687>
 
@@ -12,7 +12,7 @@
 
 - 这里是我自己安装过程的记录。
 
-- 我在安装时使用的编辑器是`Nano`，如果你使用的是`vim`等编辑器，阅读下面内容时自行替换。
+- 我在安装时使用的编辑器是`Nano`，如果你使用的是`Vim`等编辑器，阅读下面内容时自行替换。
 
 # 安装
 
@@ -236,7 +236,7 @@ $ grub-install --target=x86_64-efi --efi-directory=/boot   # 根据自己的系�
 
 ```bash
 $ pacman -S zsh nano vim wpa_supplicant dhcpcd
-# zsh              终端模拟器
+# zsh              shell
 # nano             编辑器
 # vim              编辑器
 # wpa_supplicant   上网工具
@@ -251,15 +251,19 @@ $ killall wpa_supplicant dhcpcd   # 终止掉网络相关的进程
 $ reboot                          # 重启，电脑黑屏后就可以拔掉Live CD了
 ```
 
-# 安装中出现问题的汇总
+# 安装Arch Linux中出现问题的汇总
 
 ## 1. 分区时出现警告：逻辑分区和物理分区不对齐
 
-- 解决方法：使用`shred`命令。
+- 可能原因：SSD或者是HDD上原来装过Windows，则硬盘最开始的32M空间（图形界面下使用Gparted可以看到）是默认空白的。这样就会导致分区的不对齐。但其实对于SSD来说只是影响到速度，使用还是比较正常的
 
-  ```bash
-  $ shred -v /dev/sda
-  ```
+- 解决方法：
+
+  - （未试验）使用`shred`命令彻底清洗磁盘，但耗时一般较长。
+  
+    ```bash
+    $ shred -v /dev/sda
+    ```
 
 # 初步配置
 
@@ -339,6 +343,34 @@ $ sudo pacman -S xorg   # 图形界面的服务器
 
 ### `yay`
 
+- AUR的包管理器。
+
+- ```bash
+  $ git clone https://aur.archlinux.org/yay.git
+  $ cd yay/
+  $ makepkg -si   # 编译安装
+  ```
+
+- 配置中国镜像：
+
+  ```bash
+  $ yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
+  ```
+
+  配置文件的位置位于`~/.config/yay/config.json`，也可通过下面的命令查看修改过的配置：
+
+  ```bash
+  $ yay -P -g
+  ```
+
+### `ranger`
+
+- 文件管理器。
+
+- ```bash
+  $ sudo pacman -S ranger
+  ```
+
 - 
 
 ### `neofetch`
@@ -356,10 +388,37 @@ $ sudo pacman -S xorg   # 图形界面的服务器
 - ```bash
   $ sudo pacman -S htop
   ```
+  
+
+### `fish`
+
+- shell
+
+- ```bash
+  $ sudo pacman -S fish
+  ```
+
+## 输入法
+
+### `fcitx`
+
+- 输入法管理器。
+
+- ```bash
+  sudo pacman -S fcitx fcitx-im fcitx-configtool
+  ```
+
+- 中文字体、emoji等的安装：
+
+  ```bash
+  $ yay -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto-fonts-emoji ttf-liberation ttf-droid   # Emoji
+  
+  $ yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts   # 中文字体
+  ```
 
 ## 浏览器
 
-### `chromium`
+### `Chromium`
 
 - 开源、支持多扩展的浏览器。
 
@@ -390,21 +449,109 @@ $ sudo pacman -S xorg   # 图形界面的服务器
   # Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
   ```
 
-  
-
 - ```bash
   $ sudo pacman -S screenkey
   ```
 
+## 视频编辑
+
+### `Kdenlive`
+
+- 视频剪辑。
+
+- ```bash
+  $ sudo pacman -S kdenlive
+  ```
+
+## 图片编辑
+
+### `Gimp`
+
+- 图片编辑。
+
+- ```bash
+  $ sudo pacman -S gimp
+  ```
+
+## 办公套件
+
+### `Libreoffice`
+
+- Office三件套。
+
+- ```bash
+  $ sudo pacman -S libreoffice
+  ```
+
+## 游戏
+
+### `Steam`
+
+- 游戏商店。
+
+- ```bash
+  $ sudo pacman -S steam
+  ```
+
+- 
+
+## 视频播放
+
+### `Vlc`
+
+- 视频播放器。
+
+- ```bash
+  $ sudo pacman -S vlc
+  ```
+
 ## 其他
 
-### `gparted`
+### `Gparted`
 
 - 有图形界面的磁盘无损分区工具。
 
 - ```bash
   $ sudo pacman -S gparted
   ```
-  
+
+### `Virtualbox`
+
+- 开源的虚拟机。
+
+- ```bash
+  $ sudo pacman -S virtualbox
+  ```
+
+### `AppImageLauncher`
+
+-  `.appimage`文件的启动器。
+
+- ```bash
+  $ sudo pacman -S appimagelauncher
+  ```
+
   
 
+# 软件安装出现的问题汇总
+
+## 搜狗输入法不显示候选框
+
+- 如果出现了问题，搜狗输入法会提示：
+
+  `搜狗输入法异常！请删除~/.config/SogouPY并重启。`
+
+- 如果以上操作不能解决问题，那么打开终端，输入`sogou-qimpanel`。
+
+  如果此时报错：
+
+  `sogou-qimpanel: error while loading libraries: libfcitx-qt.so.0: cannot open shared object file: No such file or directory`
+
+  那么就是缺少库文件的问题，目前最好的解决办法是取消使用`fcitx`：
+
+  ```bash
+  $ sudo pacman -S fcitx-lilydjwg-git
+  # 在安装这个包时，pacman会提示有包冲突，移除冲突的fcitx等相关包即可
+  ```
+
+  然而在我的`LXDE`并且在默认壁纸下，搜狗输入法的状态栏周围会有一个黑框...不太美观但不影响使用。
