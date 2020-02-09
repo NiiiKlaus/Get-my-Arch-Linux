@@ -345,7 +345,7 @@ $ sudo pacman -S xorg   # 图形界面的服务器
 
 - 系统硬件信息查看。
 
--  ```bash
+- ```bash
   $ sudo pacman -S neofetch
   ```
 
@@ -367,7 +367,7 @@ $ sudo pacman -S xorg   # 图形界面的服务器
   $ sudo pacman -S chromium
   ```
 
-## 录屏
+## 录屏相关
 
 ### `SimpleScreenRecorder`
 
@@ -377,6 +377,25 @@ $ sudo pacman -S xorg   # 图形界面的服务器
   $ sudo pacman -S simplescreenrecorder
   ```
 
+### `Screenkey`
+
+- 捕捉键盘按键。
+
+- 首先添加`archlinuxcn`，同时去掉`multilib`前面的注释。
+
+  ```bash
+  $ sudo nano /etc/pacman.conf
+  # 添加如下两行：
+  # [archlinuxcn]
+  # Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+  ```
+
+  
+
+- ```bash
+  $ sudo pacman -S screenkey
+  ```
+
 ## 其他
 
 ### `gparted`
@@ -384,7 +403,7 @@ $ sudo pacman -S xorg   # 图形界面的服务器
 - 有图形界面的磁盘无损分区工具。
 
 - ```bash
-$ sudo pacman -S gparted
+  $ sudo pacman -S gparted
   ```
   
   
