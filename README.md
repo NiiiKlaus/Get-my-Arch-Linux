@@ -1,85 +1,96 @@
 # <center>Get my Arch Linux</center>
 
-
 <!-- TOC GFM -->
 
-+ [写在前面](#写在前面)
-+ [安装](#安装)
-	* [1. 修改`tty`界面下的字体](#1-修改tty界面下的字体)
-	* [2. 连接网络](#2-连接网络)
-		- [2.1 扫描当前互联网设备](#21-扫描当前互联网设备)
-		- [2.2 启用设备](#22-启用设备)
-		- [2.3 扫描当前设备下的WiFi列表并得到所有WIFI的名字](#23-扫描当前设备下的wifi列表并得到所有wifi的名字)
-		- [2.4 使用`wpa_supplicant`连接网络并后台运行](#24-使用wpa_supplicant连接网络并后台运行)
-		- [2.5 动态分配IP地址](#25-动态分配ip地址)
-		- [2.6 测试](#26-测试)
-	* [3. 更正系统时间](#3-更正系统时间)
-	* [4. 硬盘分区](#4-硬盘分区)
-		- [4.1 查看现有的磁盘](#41-查看现有的磁盘)
-		- [4.2 进入磁盘编辑](#42-进入磁盘编辑)
-		- [4.3 定义分区格式](#43-定义分区格式)
-		- [4.4 打开`SWAP`](#44-打开swap)
-	* [5. 配置`pacman`](#5-配置pacman)
-	* [6. 使用`pacstrap`安装Arch Linux基础至磁盘中](#6-使用pacstrap安装arch-linux基础至磁盘中)
-		- [6.1 查看当前的磁盘](#61-查看当前的磁盘)
-		- [6.2 挂载磁盘](#62-挂载磁盘)
-		- [6.3 开始安装](#63-开始安装)
-		- [6.4 生成挂载文件](#64-生成挂载文件)
-	* [7. 使用`arch-chroot`对安装好的系统进行配置](#7-使用arch-chroot对安装好的系统进行配置)
-		- [7.1 进入`arch-chroot`](#71-进入arch-chroot)
-		- [7.2  设置时区和时间](#72--设置时区和时间)
-		- [7.3 编辑本地化的文件](#73-编辑本地化的文件)
-		- [7.4 生成本地化](#74-生成本地化)
-		- [7.5 设置语言](#75-设置语言)
-		- [7.6 (可选)设置键盘布局和键位绑定](#76-可选设置键盘布局和键位绑定)
-		- [7.7 编辑网络相关的文件](#77-编辑网络相关的文件)
-		- [7.8 更改`root`用户密码](#78-更改root用户密码)
-		- [7.9 安装`grub`相关](#79-安装grub相关)
-		- [7.10 安装基础工具](#710-安装基础工具)
-		- [7.11 重启，完成安装](#711-重启完成安装)
-+ [安装Arch Linux中出现问题的汇总](#安装arch-linux中出现问题的汇总)
-	* [1. 分区时出现警告：逻辑分区和物理分区不对齐](#1-分区时出现警告逻辑分区和物理分区不对齐)
-	* [2. 关于`grub`和分区](#2-关于grub和分区)
-+ [初步配置](#初步配置)
-	* [1. 安装`man`](#1-安装man)
-	* [2. 安装`base-devel`](#2-安装base-devel)
-	* [3. 添加用户](#3-添加用户)
-	* [4. 修改用户权限](#4-修改用户权限)
-	* [5. 切换到低权限的用户](#5-切换到低权限的用户)
-	* [6. 安装`Xorg`](#6-安装xorg)
-	* [7. 安装桌面环境](#7-安装桌面环境)
-	* [8. (可选)安装`lightdm`](#8-可选安装lightdm)
-+ [软件安装](#软件安装)
-	* [终端用](#终端用)
-		- [`yay`](#yay)
-		- [`ranger`](#ranger)
-		- [`neofetch`](#neofetch)
-		- [`htop`](#htop)
-		- [`fish`](#fish)
-	* [`openssh`](#openssh)
-	* [输入法](#输入法)
-		- [`fcitx`](#fcitx)
-	* [浏览器](#浏览器)
-		- [`Chromium`](#chromium)
-	* [录屏相关](#录屏相关)
-		- [`SimpleScreenRecorder`](#simplescreenrecorder)
-		- [`Screenkey`](#screenkey)
-	* [视频编辑](#视频编辑)
-		- [`Kdenlive`](#kdenlive)
-	* [图片编辑](#图片编辑)
-		- [`Gimp`](#gimp)
-	* [办公套件](#办公套件)
-		- [`Libreoffice`](#libreoffice)
-	* [游戏](#游戏)
-		- [`Steam`](#steam)
-	* [视频播放](#视频播放)
-		- [`Vlc`](#vlc)
-	* [其他](#其他)
-		- [`Gparted`](#gparted)
-		- [`Virtualbox`](#virtualbox)
-		- [`AppImageLauncher`](#appimagelauncher)
-+ [软件安装出现的问题汇总](#软件安装出现的问题汇总)
-	* [搜狗输入法不显示候选框](#搜狗输入法不显示候选框)
+* [写在前面](#写在前面)
+* [安装](#安装)
+  * [1. 修改tty界面下的字体](#1-修改tty界面下的字体)
+  * [2. 连接网络](#2-连接网络)
+     * [2.1 扫描当前互联网设备](#21-扫描当前互联网设备)
+     * [2.2 启用设备](#22-启用设备)
+     * [2.3 扫描当前设备下的WiFi列表并得到所有WIFI的名字](#23-扫描当前设备下的wifi列表并得到所有wifi的名字)
+     * [2.4 使用wpa_supplicant连接网络并后台运行](#24-使用wpa_supplicant连接网络并后台运行)
+     * [2.5 动态分配IP地址](#25-动态分配ip地址)
+     * [2.6 测试](#26-测试)
+  * [3. 更正系统时间](#3-更正系统时间)
+  * [4. 硬盘分区](#4-硬盘分区)
+     * [4.1 查看现有的磁盘](#41-查看现有的磁盘)
+     * [4.2 进入磁盘编辑](#42-进入磁盘编辑)
+     * [4.3 定义分区格式](#43-定义分区格式)
+     * [4.4 打开SWAP](#44-打开swap)
+  * [5. 配置pacman](#5-配置pacman)
+  * [6. 使用pacstrap安装Arch Linux基础至磁盘中](#6-使用pacstrap安装arch-linux基础至磁盘中)
+     * [6.1 查看当前的磁盘](#61-查看当前的磁盘)
+     * [6.2 挂载磁盘](#62-挂载磁盘)
+     * [6.3 开始安装](#63-开始安装)
+     * [6.4 生成挂载文件](#64-生成挂载文件)
+  * [7. 使用arch-chroot对安装好的系统进行配置](#7-使用arch-chroot对安装好的系统进行配置)
+     * [7.1 进入arch-chroot](#71-进入arch-chroot)
+     * [7.2  设置时区和时间](#72--设置时区和时间)
+     * [7.3 编辑本地化的文件](#73-编辑本地化的文件)
+     * [7.4 生成本地化](#74-生成本地化)
+     * [7.5 设置语言](#75-设置语言)
+     * [7.6 (可选)设置键盘布局和键位绑定](#76-可选设置键盘布局和键位绑定)
+     * [7.7 编辑网络相关的文件](#77-编辑网络相关的文件)
+     * [7.8 更改root用户密码](#78-更改root用户密码)
+     * [7.9 安装grub相关](#79-安装grub相关)
+     * [7.10 安装基础工具](#710-安装基础工具)
+     * [7.11 重启，完成安装](#711-重启完成安装)
+* [安装Arch Linux中出现问题的汇总](#安装arch-linux中出现问题的汇总)
+  * [1. 分区时出现警告：逻辑分区和物理分区不对齐](#1-分区时出现警告逻辑分区和物理分区不对齐)
+  * [2. 关于grub和分区](#2-关于grub和分区)
+* [初步配置](#初步配置)
+  * [1. 安装man](#1-安装man)
+  * [2. 安装base-devel](#2-安装base-devel)
+  * [3. 添加用户](#3-添加用户)
+  * [4. 修改用户权限](#4-修改用户权限)
+  * [5. 切换到低权限的用户](#5-切换到低权限的用户)
+  * [6. 安装Xorg](#6-安装xorg)
+  * [7. 安装桌面环境](#7-安装桌面环境)
+  * [8. (可选)安装lightdm](#8-可选安装lightdm)
+* [软件安装](#软件安装)
+  * [终端相关](#终端相关)
+     * [yay](#yay)
+     * [ranger](#ranger)
+     * [htop](#htop)
+     * [openssh](#openssh)
+     * [alacritty](#alacritty)
+  * [输入法](#输入法)
+     * [fcitx](#fcitx)
+  * [浏览器](#浏览器)
+     * [Chromium](#chromium)
+     * [Midori](#midori)
+  * [录屏相关](#录屏相关)
+     * [SimpleScreenRecorder](#simplescreenrecorder)
+     * [Screenkey](#screenkey)
+  * [图片编辑](#图片编辑)
+     * [Gimp](#gimp)
+  * [办公](#办公)
+     * [Libreoffice](#libreoffice)
+     * [Thunderbird](#thunderbird)
+  * [社交](#社交)
+     * [QQ](#qq)
+     * [微信](#微信)
+  * [游戏](#游戏)
+     * [steam](#steam)
+  * [下载工具](#下载工具)
+     * [transmission](#transmission)
+     * [qbittorrent](#qbittorrent)
+  * [视频播放](#视频播放)
+     * [Vlc](#vlc)
+  
+  * [其他](#其他)
+    * [Gparted](#gparted)
+    * [Virtualbox](#virtualbox)
+    * [AppImageLauncher](#appimagelauncher)
+    * [Tlp](#tlp)
+    * [Blueman](#blueman)
+* [软件安装以及配置出现的问题汇总](#软件安装以及配置出现的问题汇总)
+  * [搜狗输入法不显示候选框](#搜狗输入法不显示候选框)
+  * [配备有intel集成显卡和NVIDIA独立显卡的机器登入图形界面时机器挂起（关机）](#配备有intel集成显卡和nvidia独立显卡的机器登入图形界面时机器挂起关机)
+* [美化](#美化)
+  * [窗口管理器](#窗口管理器)
+     * [i3](#i3)
 
 <!-- /TOC -->
 
@@ -340,7 +351,7 @@ $ reboot                          # 重启，电脑黑屏后就可以拔掉Live 
 
 ## 1. 分区时出现警告：逻辑分区和物理分区不对齐
 
-- 可能原因：SSD或者是HDD上原来装过Windows，则硬盘最开始的32M空间（图形界面下使用Gparted可以看到）是默认空白的。这样就会导致分区的不对齐。但其实对于SSD来说只是影响到速度，使用还是比较正常的
+- 可能原因：SSD或者是HDD上原来装过Windows，则硬盘最开始的32M空间（图形界面下使用`Gparted`可以看到）是默认空白的。这样就会导致分区的不对齐。但其实对于SSD来说只是影响到速度，使用还是比较正常的
 
 - 解决方法：
 
@@ -605,7 +616,7 @@ $ sudo pacman -S xorg   # 图形界面的服务器
 
 # 软件安装
 
-## 终端用
+## 终端相关
 
 ### `yay`
 
@@ -663,14 +674,21 @@ $ sudo pacman -S xorg   # 图形界面的服务器
   $ sudo pacman -S fish
   ```
 
-## `openssh`
+### `openssh`
 
-- 远程连接工具
+- 远程连接工具。
 
-```bash
-$ sudo pacman -S openssh
-```
+- ```bash
+  $ sudo pacman -S openssh
+  ```
 
+### `alacritty`
+
+- 使用显卡渲染的终端模拟器。
+
+- ```bash
+  $ sudo pacman -S alacritty
+  ```
 
 
 ## 输入法
@@ -699,6 +717,14 @@ $ sudo pacman -S openssh
 
 - ```bash
   $ sudo pacman -S chromium
+  ```
+
+### `Midori`
+
+- 轻量、快速的浏览器。
+
+- ```bash
+  $ sudo pacman -S midori
   ```
 
 ## 录屏相关
@@ -748,7 +774,7 @@ $ sudo pacman -S openssh
   $ sudo pacman -S gimp
   ```
 
-## 办公套件
+## 办公
 
 ### `Libreoffice`
 
@@ -756,6 +782,35 @@ $ sudo pacman -S openssh
 
 - ```bash
   $ sudo pacman -S libreoffice
+  ```
+
+### `Thunderbird`
+
+- 邮件管理。
+
+- ```bash
+  $ sudo pacman -S thunderbird
+  ```
+
+## 社交
+
+### QQ
+
+- 社交软件。
+
+- ```bash
+  $ sudo pacman -S deepin.com.qq.im
+  ```
+
+### 微信
+
+- 社交软件。
+
+- ```bash
+  $ sudo pacman -S electronic-wechat   # 基于Electron的微信，本质上是网页版的微信
+  $ sudo pacman -S wine-wechat         # Wine集成的Windows平台的微信
+  # wine-wechat可能需要安装wine-mono字体，它建议使用pacman进行管理：
+  # sudo pacman -S wine-mono
   ```
 
 ## 游戏
@@ -768,6 +823,27 @@ $ sudo pacman -S openssh
   $ sudo pacman -S steam
   ```
 
+## 下载工具
+
+### `transmission`
+
+- 支持磁力下载。
+
+- ```bash
+  $ sudo pacman -S transmission-qt    # 基于GTK的图形化界面
+  $ sudo pacman -S transmission-gtk   # 基于Qt的图形化界面
+  # 两种皆可
+  ```
+```
+  
+
+### `qbittorrent`
+
+- 磁力下载。
+
+- ```bash
+  $ sudo pacman -S qbittorrent
+```
 
 ## 视频播放
 
@@ -805,7 +881,7 @@ $ sudo pacman -S openssh
   $ sudo pacman -S appimagelauncher
   ```
 
-## `Tlp`
+### `Tlp`
 
 - 电池性能优化。
 
@@ -813,7 +889,22 @@ $ sudo pacman -S openssh
   $ sudo pacman -S tlp
   ```
 
-# 软件安装出现的问题汇总
+### `Blueman`
+
+- 有图形界面的蓝牙设备管理。
+
+- ```bash
+  $ sudo pacman -S blueman
+  ```
+
+- 使用之前需要将`bluetooth`添加至守护进程：
+
+  ```bash
+  $ sudo systemctl enable bluetooth
+  ```
+
+
+# 软件安装以及配置出现的问题汇总
 
 ## 搜狗输入法不显示候选框
 
@@ -836,3 +927,39 @@ $ sudo pacman -S openssh
 
   然而在我的`LXDE`并且在默认壁纸下，搜狗输入法的状态栏和候选框周围会有一个黑框...不太美观但不影响使用。
 
+## 配备有`intel`集成显卡和`NVIDIA`独立显卡的机器登入图形界面时机器挂起（关机）
+
+- 这主要是Linux对于`NVIDIA`显卡驱动的问题引起的。
+
+- 如果不启动图形界面，只用`tty`，是没有问题的。
+
+- 解决方法（由于我个人不太需要使用N卡，所以没有选择安装对应驱动等）：
+
+  - 如果你将你的`Display Manager`加入了守护进程，那么我目前能想到的方法是使用一个`Live CD`，将你的Arch Linux挂载在`Live CD`上，然后使用`arch-chroot`进行操作。
+
+  - 如果你开机进入的是`tty`，即你每次都是手动启动图形界面，那么就按照平时在终端中的操作来进行操作。
+
+  - 操作如下：
+
+    ```bash
+    $ sudo pacman -S bumblebee   # 安装bumblebee
+    $ sudo nano /etc/modprobe.d/modprobe.conf
+    # 在文件中添加“options nvidia NVreg_Mobile=1”，然后保存退出，重启机器
+    ```
+
+- 参考：
+
+  <https://wiki.archlinux.org/index.php/NVIDIA/Troubleshooting#Laptops:_X_hangs_on_login/out,_worked_around_with_Ctrl+Alt+Backspace>
+
+# 美化
+
+## 窗口管理器
+
+### `i3`
+
+- ```bash
+  $ sudo pacman -S i3      # 软件包组中有冲突，选择移除即可
+  $ sudo pacman -S dmenu   # i3下常用的一个快速启动器
+  ```
+
+- 
