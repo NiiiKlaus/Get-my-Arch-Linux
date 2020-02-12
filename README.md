@@ -156,7 +156,7 @@ $ timedatectl set-ntp true
 
 ## 4. 硬盘分区
 
-- 这里我采用的启动方式是`UEFI + GPT`，其他的启动方式请参考[下文](#2-关于grub和分区)
+- 这里我采用的启动方式是`UEFI + GPT`，其他的启动方式请参考[下文](#2-关于grub和分区)。
 
 ### 4.1 查看现有的磁盘
 
@@ -768,7 +768,6 @@ $ sudo pacman -S openssh
   $ sudo pacman -S steam
   ```
 
-- 
 
 ## 视频播放
 
@@ -806,7 +805,13 @@ $ sudo pacman -S openssh
   $ sudo pacman -S appimagelauncher
   ```
 
-  
+## `Tlp`
+
+- 电池性能优化。
+
+- ```bash
+  $ sudo pacman -S tlp
+  ```
 
 # 软件安装出现的问题汇总
 
@@ -830,3 +835,4 @@ $ sudo pacman -S openssh
   ```
 
   然而在我的`LXDE`并且在默认壁纸下，搜狗输入法的状态栏周围会有一个黑框...不太美观但不影响使用。
+
