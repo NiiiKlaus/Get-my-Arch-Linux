@@ -55,6 +55,7 @@
      * [htop](#htop)
      * [openssh](#openssh)
      * [alacritty](#alacritty)
+	 * [st](#st)
   * [输入法](#输入法)
      * [fcitx](#fcitx)
   * [浏览器](#浏览器)
