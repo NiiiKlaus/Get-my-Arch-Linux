@@ -1009,4 +1009,10 @@ $ sudo pacman -S xorg   # 图形界面的服务器
   ```c
   static const char *termcmd[] = { "st", NULL }; //找到这一行，将"st"修改为你现在用的终端的启动命令
   ```
+
   - dwm一般下载后配置文件是`config.def.h`，但在使用`make`编译后，会生成`config.h`，这时可以将`config.def.h`删除掉，在打补丁时，有些补丁需要修改`config.def.h`，但它们没有找到，因此会询问文件名，这时，只要输入`config.h`后回车即可
+
+  - dwm下载后，默认的MODKEY是`Mod1`(也就是`Alt`)，如果需要修改，就需要在`config.h`里进行下面这个操作：
+  ```c
+  #define MODKEY Mod1Mask; // 找到这一行，将Mod1Mask更改为你想要的键即可。如果要改为Win键，就将其改为Mod4Mask
+  ```
