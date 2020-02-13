@@ -117,7 +117,7 @@
 - 这里将其设置为：
 
   ```bash
-  $ setfont /usr/share/kbd/consolefonts/LatGrkCyr-12*22.psfz.gz
+  $ setfont /usr/share/kbd/consolefonts/LatGrkCyr-12*22.psfu.gz
   ```
 
 ## 2. 连接网络
