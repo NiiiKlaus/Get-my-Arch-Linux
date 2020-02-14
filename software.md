@@ -26,7 +26,7 @@
 
 ### `ranger`
 
-- 文件管理器。
+- 终端下的文件管理器，`Python`编写。
 
 - ```bash
   $ sudo pacman -S ranger
@@ -43,7 +43,7 @@
 
 ### `htop`
 
-- 系统资源占用查看。
+- 终端下系统资源占用查看工具。
 
 - ```bash
   $ sudo pacman -S htop
@@ -51,10 +51,18 @@
 
 ### `fish`
 
-- 功能强大的终端命令解析器。
+- 功能强大、智能友好的终端命令解析器。
 
 - ```bash
   $ sudo pacman -S fish
+  ```
+
+### `zsh`
+
+- 功能强大的Linux Shell，配合[`Oh-My-Zsh`](https://ohmyz.sh/)使用更佳。
+
+- ```bash
+  $ sudo pacman -S zsh
   ```
 
 ### `openssh`
@@ -75,7 +83,7 @@
 
 ### `st`
 
-- 来自`suckless`的`Xorg`下的极简终端模拟器。
+- 来自 Suckless 社区的`X`下的极简终端模拟器。
 
 - ```bash
   $ git clone https://git.suckless.org/st   # 克隆源代码的仓库
