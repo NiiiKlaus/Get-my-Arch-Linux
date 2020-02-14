@@ -213,8 +213,8 @@
 - 支持磁力下载。
 
 - ```bash
-  $ sudo pacman -S transmission-qt    # 基于GTK的图形化界面
-  $ sudo pacman -S transmission-gtk   # 基于Qt的图形化界面
+  $ sudo pacman -S transmission-qt    # 基于QT的图形化界面
+  $ sudo pacman -S transmission-gtk   # 基于GTK的图形化界面
   # 两种皆可
   ```
 
