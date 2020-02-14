@@ -1,13 +1,57 @@
 # 美化
-
 ## 窗口管理器
+
+使用窗口管理器需要X服务的支持，[Xorg安装方法](initial-configuration.md#xorg)
+
+### `Xorg使用方法`
+
+- 找到`/etc/X11/xinit/xinitrc`文件，使用编辑器在文件末尾进行以下操作：
+
+  ```
+  exec dwm #如果你并不打算使用dwm作为你的窗口管理器，就将其改为你所使用的窗口管理器的启动命令
+
+  twm &
+  xclock -geometry 50x50-1+1 &
+  xterm -geometry 80x50+494+51 &
+  xterm -geometry 80x20+494-0 &
+  exec xterm -geometry 80x66+0+0 -name login
+  #找到以上这几行，在它们开头插入#以此注释掉
+  ```
+
+- 在进行了以上操作后，在tty下运行`startx`命令开启X服务，随后即可进入窗口管理器。
+
+- 如果你觉得每次修改`xinitrc`文件要到`etc`目录下很麻烦，可以创建软链接到你的用户目录：
+
+  ```bash
+  $ sudo -E ln -sf /etc/X11/xinit/xinitrc ~/.xinitrc
+  ```
 
 ### `i3`
 
-- ```bash
+- 介绍：
+
+  i3wm是一个比较好用的平铺式窗口管理器，它的功能比较齐全，自带状态栏、锁屏等工具。
+
+- 优点：
+
+  - 自带功能齐全，用户体验较好
+  - 拥有配置文件，能够让用户自定义，启动i3后会生成配置文件，一般在`~/.config/i3/`
+
+- 缺点：
+
+  - 二进制可执行文件较大，对于配置低的电脑运行起来可能会卡顿
+  - 由于拥有配置文件，在每次启动i3时会读取配置文件，因此启动速度会较慢
+
+- 安装i3
+
+  ```bash
   $ sudo pacman -S i3      # 软件包组中有冲突，选择移除即可
   $ sudo pacman -S dmenu   # i3下常用的一个快速启动器
   ```
+
+- 注意事项：
+
+  - 在配置文件里设置自启程序时，可能会使鼠标呈现"繁忙"的状态(我个人无法忍受)，解决办法就是在程序启动命令之前加上`--no-startup-id`参数
 
 ### `dwm`
 
@@ -28,7 +72,7 @@
 
 - 安装dwm
 
-- ```bash
+  ```bash
   $ git clone https://git.suckless.org/dwm
   $ cd ./dwm
   $ make

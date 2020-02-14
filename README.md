@@ -74,6 +74,7 @@
     - [`neofetch`](software-installation.md/#neofetch)
     - [`htop`](software-installation.md/#htop)
     - [`fish`](software-installation.md/#fish)
+	- [`zsh`](software-installation.md/#zsh)
     - [`openssh`](software-installation.md/#openssh)
     - [`alacritty`](software-installation.md/#alacritty)
 	- [`st`](software-installation.md/#st)

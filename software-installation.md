@@ -26,7 +26,7 @@
 
 ### `ranger`
 
-- 文件管理器。
+- 终端下的文件管理器，由Python编写，因此你需要安装Python的依赖环境。
 
 - ```bash
   $ sudo pacman -S ranger
@@ -35,7 +35,7 @@
 
 ### `neofetch`
 
-- 系统硬件信息查看。
+- 终端下查看系统硬件信息工具。
 
 - ```bash
   $ sudo pacman -S neofetch
@@ -43,7 +43,7 @@
 
 ### `htop`
 
-- 系统资源占用查看。
+- 终端下系统资源占用查看工具。
 
 - ```bash
   $ sudo pacman -S htop
@@ -51,10 +51,18 @@
 
 ### `fish`
 
-- shell
+- 一款智能且友好的Linux, MacOS shell。
 
 - ```bash
   $ sudo pacman -S fish
+  ```
+
+### `zsh`
+
+- 一款比较强大的Linux终端Shell，配合Oh-my-Zsh使用体验更佳。
+
+- ```bash
+  $ sudo pacman -S zsh
   ```
 
 ### `openssh`

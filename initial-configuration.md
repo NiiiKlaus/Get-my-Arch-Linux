@@ -39,7 +39,7 @@ $ exit# 退出root用户，并登陆niklaus用户
 ## 6. 安装`Xorg`
 
 ```bash
-$ sudo pacman -S xorg   # 图形界面的服务器
+$ sudo pacman -S xorg xorg-server   # 图形界面的服务器
 ```
 
 ## 7. 安装桌面环境
