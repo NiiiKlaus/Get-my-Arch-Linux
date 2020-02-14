@@ -1,7 +1,7 @@
 # 美化
 ## 窗口管理器
 
-使用窗口管理器需要X服务的支持，[Xorg安装方法](initial-configuration.md#xorg)
+使用窗口管理器需要X服务的支持，[Xorg安装方法](initial-configuration.md#6-安装xorg)
 
 ### `Xorg使用方法`
 
