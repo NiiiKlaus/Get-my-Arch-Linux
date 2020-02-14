@@ -24,7 +24,7 @@ $ ip link
 $ ip link set 设备名 up
 ```
 
-### 2.3 扫描当前设备下的WiFi列表并得到所有WIFI的名字
+### 2.3 扫描当前设备下的WiFi列表并得到所有WiFi的名字
 
 ```bash
 $ iwlist 设备名 scan | grep ESSID

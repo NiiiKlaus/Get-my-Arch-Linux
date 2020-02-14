@@ -1,4 +1,4 @@
-# 软件安装
+# 软件
 
 ## 终端相关
 
@@ -26,7 +26,7 @@
 
 ### `ranger`
 
-- 文件管理器。
+- 终端下的文件管理器，`Python`编写。
 
 - ```bash
   $ sudo pacman -S ranger
@@ -43,7 +43,7 @@
 
 ### `htop`
 
-- 系统资源占用查看。
+- 终端下系统资源占用查看工具。
 
 - ```bash
   $ sudo pacman -S htop
@@ -51,10 +51,18 @@
 
 ### `fish`
 
-- shell
+- 功能强大、智能友好的终端命令解析器。
 
 - ```bash
   $ sudo pacman -S fish
+  ```
+
+### `zsh`
+
+- 功能强大的Linux Shell，配合[`Oh-My-Zsh`](https://ohmyz.sh/)使用更佳。
+
+- ```bash
+  $ sudo pacman -S zsh
   ```
 
 ### `openssh`
@@ -73,10 +81,31 @@
   $ sudo pacman -S alacritty
   ```
 
+### `st`
+
+- 来自 Suckless 社区的`X`下的极简终端模拟器。
+
+- ```bash
+  $ git clone https://git.suckless.org/st   # 克隆源代码的仓库
+  $ cd st/
+  $ sudo make clean install                 # 编译安装
+  ```
+
+- 关于如何配置请参考：
+
+  <https://www.bilibili.com/video/av74807286?from=search&seid=2093989859113530979>
+
+### `tree`
+
+- 展示目录下的文件。
+
+- ```bash
+  $ sudo pacman -S tree
+  ```
 
 ## 输入法
 
-### `fcitx`
+### Fcitx
 
 - 输入法管理器。
 
@@ -92,9 +121,14 @@
   $ yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts   # 中文字体
   ```
 
+### IBus
+
+- 输入法管理器。`fcitx`比较好的替代品。
+- 
+
 ## 浏览器
 
-### `Chromium`
+### Chromium
 
 - 开源、支持多扩展的浏览器。
 
@@ -102,7 +136,7 @@
   $ sudo pacman -S chromium
   ```
 
-### `Midori`
+### Midori
 
 - 轻量、快速的浏览器。
 
@@ -112,7 +146,7 @@
 
 ## 录屏相关
 
-### `SimpleScreenRecorder`
+### SimpleScreenRecorder
 
 - 轻量的录屏软件。
 
@@ -120,7 +154,7 @@
   $ sudo pacman -S simplescreenrecorder
   ```
 
-### `Screenkey`
+### Screenkey
 
 - 捕捉键盘按键。
 
@@ -139,7 +173,7 @@
 
 ## 视频编辑
 
-### `Kdenlive`
+### Kdenlive
 
 - 视频剪辑。
 
@@ -149,7 +183,7 @@
 
 ## 图片编辑
 
-### `Gimp`
+### Gimp
 
 - 图片编辑。
 
@@ -159,7 +193,7 @@
 
 ## 办公
 
-### `Libreoffice`
+### Libreoffice
 
 - Office三件套。
 
@@ -167,12 +201,20 @@
   $ sudo pacman -S libreoffice
   ```
 
-### `Thunderbird`
+### Thunderbird
 
 - 邮件管理。
 
 - ```bash
   $ sudo pacman -S thunderbird
+  ```
+
+### Typora
+
+- 跨平台的`Markdown`编辑器，所见即所得。
+
+- ```bash
+  $ sudo pacman -S typora
   ```
 
 ## 社交
@@ -198,7 +240,7 @@
 
 ## 游戏
 
-### `Steam`
+### Steam
 
 - 游戏商店。
 
@@ -208,30 +250,27 @@
 
 ## 下载工具
 
-### `transmission`
+### Transmission
 
 - 支持磁力下载。
 
 - ```bash
-  $ sudo pacman -S transmission-qt    # 基于GTK的图形化界面
-  $ sudo pacman -S transmission-gtk   # 基于Qt的图形化界面
+  $ sudo pacman -S transmission-qt    # 基于Qt的图形化界面
+  $ sudo pacman -S transmission-gtk   # 基于GTK的图形化界面
   # 两种皆可
   ```
-
-```
   
-
-### `qbittorrent`
+### qBittorrent
 
 - 磁力下载。
 
 - ```bash
   $ sudo pacman -S qbittorrent
-```
+  ```
 
 ## 视频播放
 
-### `Vlc`
+### Vlc
 
 - 视频播放器。
 
@@ -241,7 +280,7 @@
 
 ## 其他
 
-### `Gparted`
+### Gparted
 
 - 有图形界面的磁盘无损分区工具。
 
@@ -249,7 +288,7 @@
   $ sudo pacman -S gparted
   ```
 
-### `Virtualbox`
+### Virtualbox
 
 - 开源的虚拟机。
 
@@ -257,7 +296,7 @@
   $ sudo pacman -S virtualbox
   ```
 
-### `AppImageLauncher`
+### AppImageLauncher
 
 - `.appimage`文件的启动器。
 
@@ -265,7 +304,7 @@
   $ sudo pacman -S appimagelauncher
   ```
 
-### `Tlp`
+### Tlp
 
 - 电池性能优化。
 
@@ -273,7 +312,7 @@
   $ sudo pacman -S tlp
   ```
 
-### `Blueman`
+### Blueman
 
 - 有图形界面的蓝牙设备管理。
 
