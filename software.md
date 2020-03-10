@@ -103,6 +103,46 @@
   $ sudo pacman -S tree
   ```
 
+### `pactree`
+
+- 展示本地或远程的包的结构。
+
+- ```bash
+  $ sudo pacman -S pacman-contrib   # 包的结构发生了一些改变，现在pactree在pacman-contrib内
+  ```
+
+### `zip`
+
+- 解压缩软件。
+
+- ```bash
+  $ sudo pacman -S zip
+  ```
+
+### `xsel`
+
+- 可以将终端输出的内容重定向到剪切板上。
+
+- ```bash
+  $ sudo pacman -S xsel
+  ```
+
+### `task`
+
+- 终端下的一个`Todo List`。
+
+- ```bash
+  $ sudo pacman -S task
+  ```
+
+### `proxychains`
+
+- 终端命令代理。
+
+- ```bash
+  $ sudo pacman -S proxychains-ng
+  ```
+
 ## 输入法
 
 ### Fcitx
@@ -124,7 +164,10 @@
 ### IBus
 
 - 输入法管理器。`fcitx`比较好的替代品。
-- 
+
+- ```bash
+  $ sudo pacman -S ibus
+  ```
 
 ## 浏览器
 
@@ -278,7 +321,7 @@
   $ sudo pacman -S vlc
   ```
 
-## 其他
+## 系统工具
 
 ### Gparted
 
@@ -286,22 +329,6 @@
 
 - ```bash
   $ sudo pacman -S gparted
-  ```
-
-### Virtualbox
-
-- 开源的虚拟机。
-
-- ```bash
-  $ sudo pacman -S virtualbox
-  ```
-
-### AppImageLauncher
-
-- `.appimage`文件的启动器。
-
-- ```bash
-  $ sudo pacman -S appimagelauncher
   ```
 
 ### Tlp
@@ -324,4 +351,70 @@
 
   ```bash
   $ sudo systemctl enable bluetooth
+  ```
+
+### NTFS-3G
+
+- Windows文件系统（NTFS）的挂载工具。
+
+- ```bash
+  $ sudo pacman -S ntfs-3g
+  ```
+  
+### AppImageLauncher
+
+- `.appimage`文件的启动器。
+
+- ```bash
+  $ sudo pacman -S appimagelauncher
+  ```
+  
+### Xcompmgr
+
+- `X`下的窗口渲染工具。可以使得窗口透明化。作为`Xorg`的拓展工具。
+
+- ```bash
+  $ sudo pacman -S xcompmgr
+  ```
+
+- 与它类似的窗口渲染器`compton`貌似已经不在维护，这里也有它的一个替代，叫`picom`。
+
+### Trayer
+
+- 轻量的系统托盘。
+
+- ```bash
+  $ sudo pacman -S trayer
+  ```
+
+- `trayer`有很多的选项。这里可以参考我的启动选项：
+
+  ```bash
+  trayer --transparent true --expand false --align right --width 20 --SetDockType false --tint 0x88888888 &
+  ```
+
+### ACPI
+
+- 电池状况监控。
+
+- ```bash
+  $ sudo pacman -S acpi
+  ```
+
+## 其他
+
+### Virtualbox
+
+- 开源的虚拟机。
+
+- ```bash
+  $ sudo pacman -S virtualbox
+  ```
+
+### Xarchiver
+
+- 图形化的解压缩软件。
+
+- ```bash
+  $ sudo pacman -S xarchiver
   ```
