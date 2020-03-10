@@ -71,7 +71,7 @@
 
 - 参考：<https://unix.stackexchange.com/questions/261576/vim-color-scheme-not-being-applied>
 
-## 在跟着[教程](https://www.bilibili.com/video/av79909133?from=search&seid=884209540666222108)配合`dwm`时，`statusbar`出现小方框
+## 在跟着教程配置`dwm`时，`statusbar`出现小方框
 
 - 这主要是因为系统缺少某些字体。教程中 UP主 状态栏的一些图标，譬如说上传、下载的箭头，都是`unicode`的字符。如果出现小方框，多半是未安装需要的字体，或者是表情字体的默认项有误。
 
