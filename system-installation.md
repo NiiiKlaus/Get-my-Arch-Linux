@@ -221,11 +221,12 @@ $ grub-install --target=x86_64-efi --efi-directory=/boot   # 根据自己的系�
 ### 7.10 安装基础工具
 
 ```bash
-$ pacman -S zsh nano vim wpa_supplicant dhcpcd
+$ pacman -S zsh nano vim wpa_supplicant wireless_tools dhcpcd
 # zsh              shell
 # nano             编辑器
 # vim              编辑器
 # wpa_supplicant   上网工具
+# wireless_tools   无线上网工具
 # dhcpcd           动态分配IP地址工具
 ```
 
