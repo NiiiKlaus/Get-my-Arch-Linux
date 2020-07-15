@@ -49,6 +49,14 @@
   $ sudo pacman -S htop
   ```
 
+### `BashTop`
+
+- 作用同 `htop`，但是有更精美的界面和更多的功能。
+
+- ```
+  $ sudo pacman -S bashtop
+  ```
+
 ### `fish`
 
 - 功能强大、智能友好的终端命令解析器。
@@ -88,12 +96,13 @@
 - ```bash
   $ git clone https://git.suckless.org/st   # 克隆源代码的仓库
   $ cd st/
-  $ sudo make clean install                 # 编译安装
+  $ make                                    # 编译
+  $ sudo make clean install                 # 安装
   ```
 
-- 关于如何配置请参考：
+- 关于如何配置可参考以下视频：
 
-  <https://www.bilibili.com/video/av74807286?from=search&seid=2093989859113530979>
+[【极简主义】打造Linux下精巧强大的终端：Simple Terminal （st） —— 【Suckless的极简主义01】](https://www.bilibili.com/video/av74807286)
 
 ### `tree`
 
