@@ -82,6 +82,7 @@
     - [`ranger`](software.md/#ranger)
     - [`neofetch`](software.md/#neofetch)
     - [`htop`](software.md/#htop)
+    - [`bashtop`](software.md/#bashtop)
     - [`fish`](software.md/#fish)
     - [`zsh`](software.md/#zsh)
     - [`openssh`](software.md/#openssh)

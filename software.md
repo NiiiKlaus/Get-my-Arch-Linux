@@ -49,6 +49,16 @@
   $ sudo pacman -S htop
   ```
 
+### `bashtop`
+
+- 终端下系统资源占用查看工具，和`htop`类似，但是界面更加优雅，功能更加丰富。完全以`shell`脚本语言编写。
+
+- ```bash
+  $ sudo pacman -S bashtop
+  ```
+
+- 如果感兴趣，可以看看来自DistroTube的安利：<https://www.youtube.com/watch?v=A6fdSHtPHAM>
+
 ### `fish`
 
 - 功能强大、智能友好的终端命令解析器。
@@ -94,6 +104,20 @@
 - 关于如何配置请参考：
 
   <https://www.bilibili.com/video/av74807286?from=search&seid=2093989859113530979>
+
+- `st`作为一个高度自定义的终端，从Arch Linux的官方仓库中得到的编译好的二进制文件的功能是比较有限的。所以Suckless官方推荐的方法是自己克隆源代码之后（打补丁等等）自己编译安装。当然你也可以充分利用自己的包管理器，我用的是Arch Linux，所以对我来说就是`pacman`，写一个简单的[`PKGBUILD`](https://wiki.archlinux.org/index.php/PKGBUILD)，让`pacman`来管理你每一个版本的构建，这样更加The Arch Way。打包方法请参考：
+
+  - <https://www.youtube.com/watch?v=ls_hpopfsQU&t=1092s>
+  - <https://www.youtube.com/watch?v=iUz28vbWgVw>
+  - [Arch Wiki: Creating packages](https://wiki.archlinux.org/index.php/Creating_packages)
+
+  `PKGBUILD`可以参考DistroTube的构建，你可以使用`yay`来得到它：
+
+  ```bash
+  $ yay -G st-distrotube-git # -G选项会将AUR里你指定包裹的PKGBUILD以及它所在的仓库克隆到你本地（当前目录），而不自动进行构建。
+  ```
+
+  当然，如果你对于你自己的构建很满意，你也可以将你的`PKGBUILD`等上传到AUR与大家分享，我提供的链接里也有相关的教程，你可以作为参考。
 
 ### `tree`
 
