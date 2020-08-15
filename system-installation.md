@@ -12,38 +12,54 @@
 
 ## 2. 连接网络
 
-### 2.1 扫描当前互联网设备
+### 2.1 无线网络
+
+#### 2.1.1 扫描当前互联网设备
 
 ```bash
 $ ip link
 ```
 
-### 2.2 启用设备
+#### 2.1.2 启用设备
 
 ```bash
 $ ip link set 设备名 up
 ```
 
-### 2.3 扫描当前设备下的WiFi列表并得到所有WiFi的名字
+#### 2.1.3 扫描当前设备下的WiFi列表并得到所有WiFi的名字
 
 ```bash
 $ iwlist 设备名 scan | grep ESSID
 ```
 
-### 2.4 使用`wpa_supplicant`连接网络并后台运行
+#### 2.1.4 使用`wpa_supplicant`连接网络并后台运行
 
 ```bash
 $ wpa_passphrase 网络名 密码 > internet.conf
 $ wpa_supplicant -c internet.conf -i 设备名 &
 ```
 
-### 2.5 动态分配IP地址
+#### 2.1.5 动态分配IP地址
 
 ```bash
 $ dhcpcd &
 ```
 
-### 2.6 测试
+### 2.2 有线网络
+
+#### 2.2.1 启用设备
+
+```bash
+$ ip link set 设备名 up
+```
+
+#### 2.2.2 动态分配IP地址
+
+```bash
+$ dhcpcd &
+```
+
+### 2.3 测试
 
 ```bash
 $ ping baidu.com
